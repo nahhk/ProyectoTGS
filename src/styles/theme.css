@@ -1,0 +1,48 @@
+@font-face {
+  font-family: 'Manrope Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200 800;
+  src: url('@fontsource-variable/manrope/files/manrope-latin-wght-normal.woff2') format('woff2');
+}
+
+:root {
+  color-scheme: light;
+  font-family: 'Manrope Variable', system-ui, sans-serif;
+  color: #17383b;
+  background: #fafbf8;
+  --portal: #065c67;
+  --portal-dark: #064853;
+  --portal-deep: #073c45;
+  --sea: #62a7b4;
+  --desert: #e0a342;
+  --flamingo: #ca5e50;
+  --muted: #495e65;
+  --line: #dce5df;
+  --paper: #f1f5ef;
+  --header-height: 5rem;
+  --panel-shadow: 0 12px 36px #133a4810;
+  --motion-ease: cubic-bezier(.22, 1, .36, 1);
+}
+
+* { box-sizing: border-box; }
+body, figure { margin: 0; }
+body { line-height: 1.6; }
+img { max-width: 100%; }
+p { line-height: 1.8; }
+a { color: inherit; }
+a:focus-visible { outline: 2px solid #976215; outline-offset: 4px; }
+[id] { scroll-margin-top: calc(var(--header-height) + 1rem); }
+.wrap { width: min(76rem, calc(100% - 4rem)); margin-inline: auto; }
+::selection { color: #073c45; background: #f7d28f; }
+
+.skip {
+  position: fixed;
+  top: .75rem;
+  left: .75rem;
+  z-index: 5;
+  padding: .75rem 1rem;
+  background: #fff;
+  transform: translateY(-200%);
+}
+.skip:focus { transform: none; }

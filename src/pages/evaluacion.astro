@@ -1,0 +1,39 @@
+---
+import StudyLayout from '../layouts/StudyLayout.astro';
+import { topics, unitThreeTitle } from '../data/info';
+---
+
+<StudyLayout
+  title={`Evaluación · ${unitThreeTitle}`}
+  description="Prepara la autoevaluación de la Unidad 3 con una guía de repaso y enlaces a cada tema."
+>
+  <article class="wrap study-page">
+    <a class="unit-link" href="/unidad-3/">← {unitThreeTitle}</a>
+    <p class="eyebrow">Actividad de cierre</p>
+    <h1 class="portal-heading">Evaluación</h1>
+    <p class="lead">Usa estas tareas de repaso para preparar la autoevaluación de la Unidad 3.</p>
+
+    <h2 class="index-heading">Qué debes poder explicar</h2>
+    <ul class="study-route" role="list">
+      {topics.map(({ id, number, title, review }) => (
+        <li>
+          <span class="topic-number" aria-hidden="true">{number}</span>
+          <div>
+            <h3><a href={`/unidad-3/${id}/`}>{title}</a></h3>
+            <p>{review}</p>
+          </div>
+        </li>
+      ))}
+    </ul>
+
+    <p>Para practicar con un solo ejemplo, retoma el <a class="unit-link" href="/caso-de-estudio/">caso de la biblioteca</a>.</p>
+
+    <section class="test" aria-labelledby="test-titulo">
+      <div>
+        <h2 id="test-titulo" class="index-heading">Test de autoevaluación</h2>
+        <p>El cuestionario estará disponible en esta sección.</p>
+      </div>
+      <span class="badge">Próximamente</span>
+    </section>
+  </article>
+</StudyLayout>
